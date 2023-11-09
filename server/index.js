@@ -11,7 +11,7 @@ dbConnect();
 const app = express();
 
 app.use(cors({
-    origin: 'https://growword-frontent.vercel.app',
+    origin: '*'',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 }));
