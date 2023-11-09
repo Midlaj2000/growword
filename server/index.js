@@ -10,7 +10,10 @@ dbConnect();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://growword-frontent.vercel.app',
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+}));
 app.use(express.json()); // Use built-in express.json() middleware
 
 
