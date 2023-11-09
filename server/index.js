@@ -12,7 +12,8 @@ const app = express();
 
 app.use(cors({
     origin: 'https://growword-frontent.vercel.app',
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
 }));
 app.use(express.json()); // Use built-in express.json() middleware
 
