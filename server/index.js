@@ -7,8 +7,6 @@ import { addFavourite, deleteSingleItem, fetchAllDatas, removeFavourite, viewAll
 
 dbConnect();
 
-const express = require('express');
-const cors = require('cors');
 
 const app = express();
 
