@@ -10,11 +10,23 @@ dbConnect();
 
 const app = express();
 
-app.use(cors({
-    origin: 'https://growword-frontent.vercel.app/',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-}));
+const allowedOrigins = [
+  'https://your-frontend-deployment-url.com',
+  'https://another-frontend-url.com',
+];
+
+// CORS configuration
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 app.use(express.json()); // Use built-in express.json() middleware
 
 
