@@ -11,8 +11,7 @@ dbConnect();
 const app = express();
 
 const allowedOrigins = [
-  'https://your-frontend-deployment-url.com',
-  'https://another-frontend-url.com',
+  'https://growword-frontent.vercel.app/'
 ];
 
 // CORS configuration
